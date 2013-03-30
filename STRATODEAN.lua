@@ -48,6 +48,8 @@ print("File Number",n)
 --Convert seconds into milliseconds and ensure that params are sensible
 if s<5 then s=5 end
 if d<1 then d=1 end
+if c<0 then c=0 end
+if c>1 then c=1 end
 s = s*1000
 d = d*1000
 
@@ -60,8 +62,11 @@ i = 0
 
 --endless loop for picture capture - will run until space full or battery empty
 while(1) do
+	set_backlight(c)
 	--Take the picture
-	shoot()	
+	shoot()
+	--Need to wait for backlight to settle before turning off backlight
+	sleep(1000)
 	--Turn backlight off if set
 	set_backlight(c)
 	--Log the info to the file
@@ -69,5 +74,6 @@ while(1) do
 	--Add 1 to iteration
 	i = i + 1
 	--Sleep iteration delay
-	sleep(s)	
+	sleep(s)
+
 end
