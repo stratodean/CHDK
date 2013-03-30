@@ -43,6 +43,7 @@ print("STRATODEAN Camera Control")
 print(timeStamp())
 print("Interval: ",s)
 print("Initial Delay:",d)
+print("File Number",n)
 
 --Convert seconds into milliseconds and ensure that params are sensible
 if s<5 then s=5 end
@@ -54,7 +55,7 @@ d = d*1000
 sleep(d)
 
 print("Starting picture capture")
-print("Date, Time, Iteration, Lens Temp, CCD Temp, Battery Voltage")
+print("Date,Time,Iteration,LensTemperature,CCDTemperature,BatteryVoltage")
 i = 0
 
 --endless loop for picture capture - will run until space full or battery empty
