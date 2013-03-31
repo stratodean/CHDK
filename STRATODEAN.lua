@@ -46,7 +46,7 @@ print("Initial Delay:",d)
 print("File Number",n)
 
 --Convert seconds into milliseconds and ensure that params are sensible
-if s<5 then s=5 end
+if s<1 then s=1 end
 if d<1 then d=1 end
 if c<0 then c=0 end
 if c>1 then c=1 end
